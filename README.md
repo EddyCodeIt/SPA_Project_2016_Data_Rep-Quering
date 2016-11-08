@@ -48,9 +48,6 @@ _________________
 3) views.py
         Content: routing of an app and certain functionalities (methods) for each route
 
-** PROBLEM ** 
-When you want to run multiple projects on your machine, your browser can store cache 
-Ctr+shift+r Reloading a page, ignoring cache.  between running different projects.
 
 
 # 3) SPA - Single Page Application
@@ -65,7 +62,6 @@ To connect index.html file to server:
        and static must be located inside App directory
 
 
-# 4) Making things pretty. Bootstrap!  
 
 
 
