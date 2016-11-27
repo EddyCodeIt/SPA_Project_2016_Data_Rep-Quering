@@ -17,6 +17,16 @@ body {
     height: auto;
 }
 
+/* USER PANEL */
+#user_panel {
+    border: dashed;
+    border-color: blue;
+    font-size: 17px;
+    color: royalblue;
+    text-align: center;
+    padding: 20px;
+    margin-top: 7px;
+}
 /* BUTTONS STYLING */
 
 #login {

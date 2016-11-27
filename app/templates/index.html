@@ -3,7 +3,6 @@
                     <!-- HEAD ELEMENT -->
     
     <head>
-        {% block head %}
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -24,13 +23,11 @@
             <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
 
             <script src ="{{ url_for('static', filename = 'lib/js/bootstrap.min.js')}}"></script>
-        {% endblock %}
     </head>
                    
                    
                     <!-- Header ELEMENT -->
     <header>
-        {% block header %}
             <nav class="navbar header-LOGin navbar-full">
                 <div class="container-fluid">
                    <div class = "row">
@@ -43,76 +40,7 @@
                    </div>
                 </div><!-- q/.container-fluid -->
             </nav>
-        {% endblock %}
             
-        {% block navigation %}
-            <nav class="navbar navbar-default center" id = "navigation">
-                <div class="container-fluid ">
-
-               <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collaps-nav-bar" aria-expanded="false"> 
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse navbar-inner" id="collaps-nav-bar">
-                       <ul class = "nav navbar-nav">
-
-                         <li class = "dropdown">
-                             <a href="home" class="dropdown-toggle" role = "button" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
-                         </li>
-
-
-                          <li class = "dropdown">
-                              <a class="dropdown-toggle" data-toggle="dropdown" >Server Setup<span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="server-settup/install">Installation</a></li>
-                                  <li><a href="#">Architecture</a></li>
-                                  <li><a href="#">Coding</a></li>
-                                  <li role="separator" class="divider"></li>
-                                  <li><a href="#">Conclusion</a></li>
-                              </ul>           
-                          </li>
-                            
-                           <li class = "dropdown">
-                               <a class="dropdown-toggle" data-toggle="dropdown" role="button" >App Layout <span class="caret"></span></a>
-                               <ul class="dropdown-menu">
-                                   <li><a href="#">Bootstrap</a></li>
-                                   <li role="separator" class="divider"></li>
-                                   <li><a href="#">Conclusion</a></li>
-                               </ul>
-                           </li>
-
-                           <li class = "dropdown">
-                               <a class="dropdown-toggle" data-toggle="dropdown" role="button" >Jinja2 Templating <span class="caret"></span></a>
-                               <ul class="dropdown-menu">
-                                   <li><a href="#">Overview</a></li>
-                                   <li><a href="#">Implemintation</a></li>
-                                   <li role="separator" class="divider"></li>
-                                   <li><a href="#">Conclusion</a></li>
-                               </ul>
-                           </li>
-
-                           <li class = "dropdown">
-                               <a class="dropdown-toggle" data-toggle="dropdown" role="button">Users & Login<span class="caret"></span></a>
-                               <ul class="dropdown-menu">
-                                   <li><a href="#">SQLAlchemy settup</a></li>
-                                   <li><a href="#">Models</a></li>
-                                   <li><a href="#">Flask-forms</a></li>
-                                   <li role="separator" class="divider"></li>
-                                   <li><a href="#">Conclusion</a></li>
-                               </ul>
-                           </li>                                                                            
-                       </ul>    
-                    </div><!-- /.navbar-collapse -->     
-                </div>
-            </nav> <!-- End of Navigation Bar -->
-        {% endblock %}
     </header>
                    
                     <!-- BODY ELEMENT -->

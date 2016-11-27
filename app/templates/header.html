@@ -1,1 +1,126 @@
-{% set active_page = "index"%}
+<!DOCTYPE html>
+<html lang="en">
+                    <!-- HEAD ELEMENT -->
+    
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+
+
+            <!-- Style Links -->
+            <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+            <link rel = "stylesheet" href="{{ url_for('static', filename = 'lib/css/bootstrap.min.css')}}">
+            <link href = "{{ url_for('static', filename = 'style.css')}}" rel = "stylesheet" >
+            <link rel = "shortcut_icon" href = "{{ url_for('static', filename = 'favicon.ico')}}">
+                  <!-- Compilable Scripts 
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+            <script src ="{{ url_for('static', filename = 'lib/jquery/jquery.min.js')}}"></script>
+
+            <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+            <script src ="{{ url_for('static', filename = 'lib/js/bootstrap.min.js')}}"></script>
+    </head>
+                   
+                   
+                    <!-- Header ELEMENT -->
+    <header>
+            <nav class="navbar header-LOGin navbar-full">
+                <div class="container-fluid">
+                   <div class = "row">
+                        <div class = "col-md-8 col-sm-8 col-xs-12">
+                            <img src="{{ url_for('static', filename = 'images/logo.png')}}" alt = "LOGO" class = "img-responsive" id = "myLogo">
+                        </div>
+                        <div class = "col-md-4 col-sm-4 col-xs-12">
+                            <p id = user_panel>user panel</p>
+                        </div>
+                   </div>
+                </div><!-- q/.container-fluid -->
+            </nav>
+            
+            <nav class="navbar navbar-default center" id = "navigation">
+                <div class="container-fluid ">
+
+               <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collaps-nav-bar" aria-expanded="false"> 
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-inner" id="collaps-nav-bar">
+                       <ul class = "nav navbar-nav">
+
+                         <li class = "dropdown">
+                             <a href="home" class="dropdown-toggle" role = "button" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
+                         </li>
+
+
+                          <li class = "dropdown">
+                              <a class="dropdown-toggle" data-toggle="dropdown" >Application Setup<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+
+                                  {% for t in TOPIC_DICT["Application Settup"] %}
+
+                               <!--  <li role="separator" class="divider"></li> -->
+
+                                      <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+
+                                  {% endfor %}
+                              </ul>           
+                          </li>
+                            
+                           <li class = "dropdown">
+                               <a class="dropdown-toggle" data-toggle="dropdown" role="button" >App Layout <span class="caret"></span></a>
+                               <ul class="dropdown-menu">
+                                   {% for t in TOPIC_DICT["App Layout"] %}
+                                      <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+                                  {% endfor %}
+                               </ul>
+                           </li>
+
+                           <li class = "dropdown">
+                               <a class="dropdown-toggle" data-toggle="dropdown" role="button" >Jinja2 Templating <span class="caret"></span></a>
+                               <ul class="dropdown-menu">
+                                  {% for t in TOPIC_DICT["Jinja2 Templating"] %}
+                                      <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+                                  {% endfor %}
+                               </ul>
+                           </li>
+
+                           <li class = "dropdown">
+                               <a class="dropdown-toggle" data-toggle="dropdown" role="button">Users & Login<span class="caret"></span></a>
+                               <ul class="dropdown-menu">
+                                  {% for t in TOPIC_DICT["Users"] %}
+                                      <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+                                  {% endfor %}
+                               </ul>
+                           </li>                                                                            
+                       </ul>    
+                    </div><!-- /.navbar-collapse -->     
+                </div>
+            </nav> <!-- End of Navigation Bar -->
+    </header>
+                   
+                    <!-- BODY ELEMENT -->
+    <body>
+
+
+
+
+
+        <div class="container main-content">    
+             {% block content %} header.html {% endblock %}
+        </div>  
+
+
+
+    </body>
+</html> 
