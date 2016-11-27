@@ -1,0 +1,182 @@
+body {
+    
+    background-color: #A0A0A0;
+}
+
+#myLogo {
+    margin-top: 10px;
+}
+
+/* Content Styling */
+
+.main-content {
+    border-left: 3px solid #333833;
+    border-right: 3px solid #333833;
+    border-radius: 20px;
+    padding: 10px;
+    height: auto;
+}
+
+/* BUTTONS STYLING */
+
+#login {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    color: #001AFF;
+}
+#login:hover {
+    color: #0055FF;
+}
+
+/* Resource: http://stackoverflow.com/questions/18838463/bootstrap-center-navbar-items */
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+.navbar.center .navbar-inner .nav {
+    float: none;
+    display:inline-block;
+}
+
+.loginBtn {
+	-moz-box-shadow:inset 0px -15px 16px -6px #ff752b;
+	-webkit-box-shadow:inset 0px -15px 16px -6px #ff752b;
+	box-shadow:inset 0px -15px 16px -6px #ff752b;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f78c2e), color-stop(1, #fa7108));
+	background:-moz-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:-webkit-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:-o-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:-ms-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:linear-gradient(to bottom, #f78c2e 5%, #fa7108 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f78c2e', endColorstr='#fa7108',GradientType=0);
+	background-color:#f78c2e; 
+	border:3px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color: #72237D;
+	font-family:Trebuchet MS;
+	font-size:20px;
+	padding:10px 10px;
+	text-decoration: none;
+	text-shadow:-1px 0px 0px #665127;
+}
+.loginBtn:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fa7108), color-stop(1, #f78c2e));
+	background:-moz-linear-gradient(top, #fa7108 5%, #f78c2e 100%);
+	background:-webkit-linear-gradient(top, #fa7108 5%, #f78c2e 100%);
+	background:-o-linear-gradient(top, #fa7108 5%, #f78c2e 100%);
+	background:-ms-linear-gradient(top, #fa7108 5%, #f78c2e 100%);
+	background:linear-gradient(to bottom, #fa7108 5%, #f78c2e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa7108', endColorstr='#f78c2e',GradientType=0);
+	background-color:#fa7108;
+    color: #B546FF;
+}
+.loginBtn:active {
+	position:relative;
+	top:1px;
+}
+
+/* HEADER BARS */
+
+.header-LOGin {
+    background-color: #202020;
+    border-color: #202020;
+}
+
+#navigation {
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.navbar-default {
+  background-color: #202020;
+  border-color: #ff752b;
+}
+
+.navbar-default .navbar-text {
+  color: #8d1bb0;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #8d1bb0;
+  border-right: solid;
+  border-left: solid;
+  border-radius: 20px;
+  width: 165px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #54ce1a;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #202020;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #8d1bb0;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #54ce1a;
+  background-color: #ff752b;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #ff752b;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #54ce1a;
+  background-color: #ff752b;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #54ce1a;
+  background-color: #ff752b;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #54ce1a;
+  background-color: #ff752b;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ff752b;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ff752b;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #8d1bb0;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #8d1bb0;
+}
+.navbar-default .navbar-link {
+  color: #8d1bb0;
+}
+.navbar-default .navbar-link:hover {
+  color: #54ce1a;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #8d1bb0;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #54ce1a;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #54ce1a;
+    background-color: #ff752b;
+  }
+}
+
+

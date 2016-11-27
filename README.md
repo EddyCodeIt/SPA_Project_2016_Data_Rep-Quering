@@ -64,10 +64,19 @@ To connect index.html file to server:
 
 
 
+# 4) Bootstrap
 
 
+# 5) Templates
+
+1.1) Create templates folder in app directory.
+     Inside the templates folder, Flask will look for Jinja2 templates.
 
 
+1.2) Jinja2 syntaxis: 
+            {{var}}
+            {% logic %}
+            {% endlogic %}
 
 
 

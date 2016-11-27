@@ -1,10 +1,13 @@
-from random import randint
-
+from flask import render_template
 from app import app 
 #send_from_directory
 
-@app.route("/") 
 # URL for website navigation
-def root():
-    return app.send_static_file("index.html")
+@app.route('/')
+@app.route('/home')
+def index(): 
+    return render_template("index.html")
 
+@app.route('/server-settup/install')
+def action():
+    return render_template("/server-settup/install.html")
