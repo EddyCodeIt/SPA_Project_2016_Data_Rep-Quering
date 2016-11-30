@@ -34,8 +34,9 @@
                         <div class = "col-md-8 col-sm-8 col-xs-12">
                             <img src="{{ url_for('static', filename = 'images/logo.png')}}" alt = "LOGO" class = "img-responsive" id = "myLogo">
                         </div>
-                        <div class = "col-md-4 col-sm-4 col-xs-12">
-                            <p id = user_panel>user panel</p>
+                        <div class = "col-md-4 col-sm-4 col-xs-12" id = user_panel>
+                            <a href="{{ url_for('logout') }}" class = "loginBtn btn-block text-center">Logout</a>
+                            <p >user panel</p>
                         </div>
                    </div>
                 </div><!-- q/.container-fluid -->

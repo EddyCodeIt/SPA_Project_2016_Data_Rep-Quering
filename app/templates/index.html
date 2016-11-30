@@ -35,7 +35,8 @@
                             <img src="{{ url_for('static', filename = 'images/logo.png')}}" alt = "LOGO" class = "img-responsive" id = "myLogo">
                         </div>
                         <div class = "col-md-4 col-sm-4 col-xs-12">
-                            <a href="#" class = "loginBtn btn-block text-center" id = "login">Login</a>
+                            <a href="{{ url_for('register') }}" class = "loginBtn btn-block text-center">Register</a>
+                            <a href="{{ '/login/' }}" class = "loginBtn btn-block text-center">Login</a>
                         </div>
                    </div>
                 </div><!-- q/.container-fluid -->

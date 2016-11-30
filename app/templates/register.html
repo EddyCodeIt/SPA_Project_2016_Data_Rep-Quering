@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+
+
+{% block content %} 
+
+    <body>
+        <div class = "container">
+           <br>
+           <h3>Registration: </h3>
+           <br>
+           
+           <form action = "" class = "form-inline" method = "post">
+               <input type = "text" class = "form-control" 
+               placeholder="User Name" name = "username"
+               value = "{{request.form.username}}" required> <!-- way to pass data back to python -->
+               <input type = "password" class = "form-control" 
+               placeholder="Password" name = "password"
+               value = "{{request.form.password}}" required>
+               <input class = "btn btn-default" type = "submit" value = "Submit">
+           </form>
+        
+           <p>{{ error }}</p>
+        </div>
+    </body>
+    
+{% endblock %}
