@@ -5,7 +5,10 @@ from app import app, db, login_manager
 
 from flask_login import login_user, logout_user, current_user, login_required
 from .models import User
+from .forms import RegistrationForm
 
+# Exceptions #
+from sqlalchemy import exc
 ## CONTENT MANAGER imports ##
 from .content_manager import Content
 #send_from_directory
@@ -50,15 +53,27 @@ def login():
     flash('Logged in successfully')
     return redirect(url_for('header'))
     
+# need to handle(if debug mode set to true): sqlalchemy.exc.IntegrityError
+#                 IntegrityError: (IntegrityError) column nickname is not unique u'UPDATE user SET nickname=?, about_me=? WHE
+#               (if debug mode false): HTTP error code 500
+# Solution: custom HTTP error handlers
 @app.route('/register/', methods = ['GET', 'POST'])
 def register():
-    if request.method == 'GET':
-        return render_template('register.html')
-    user = User(request.form['username'], request.form['password'])
-    db.session.add(user)
-    db.session.commit()
-    flash('User successfully registered')
-    return redirect(url_for('login'))
+    form = RegistrationForm(request.form)
+    if request.method == 'POST' and form.validate():
+        try:
+            user = User(form.username.data,
+                        form.password.data)        
+            db.session.add(user)
+            db.session.commit()
+            flash('Thanks for registering')
+            return redirect(url_for('login'))
+        except exc.IntegrityError as e:
+            flash("That user name is already taken!")
+            db.session().rollback()
+            return render_template('register.html', form=form)
+    return render_template('register.html', form=form)
+    
 
 @app.route('/logout/')
 def logout():
@@ -70,3 +85,8 @@ def logout():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500

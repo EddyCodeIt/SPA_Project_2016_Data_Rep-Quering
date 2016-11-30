@@ -5,21 +5,30 @@
 {% block content %} 
 
     <body>
-        <div class = "container">
-            <br>
-            <h3>Registration: </h3>
-            <br>
+        <div class = "container-fluid" >
+           <div class="row">
+               <div class="col-md-4"></div>
+               
+               <div class="col-md-4">
+                    <br>
+                    <h3>Registration: </h3>
+                    <br>
 
-           <!-- Code source: http://flask.pocoo.org/docs/0.11/patterns/wtforms/ -->
-            {% from "_formhelpers.html" import render_field %}
-            <form method=post action="/register/">
-                <dl>
-                    {{ render_field(form.username) }}
-                    {{ render_field(form.password) }}
-                    {{ render_field(form.confirm) }}
-                </dl>
-                <p><input type=submit value=Register>
-            </form>
+                    <!-- Code source: http://flask.pocoo.org/docs/0.11/patterns/wtforms/ -->
+                    {% from "_formhelpers.html" import render_field %}
+                    <form method=post action="/register/">
+                        <dl>
+                        {{ render_field(form.username) }}
+                        {{ render_field(form.password) }}
+                        {{ render_field(form.confirm) }}
+                        </dl>
+                        <input class = "loginBtn" style = "border-radius: 20px; "type=submit value=Register>
+                    </form>
+               </div>
+               
+               <div class="col-md-4"></div>
+           </div>
+
         </div>
     </body>
 

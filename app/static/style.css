@@ -3,6 +3,20 @@ body {
     background-color: #A0A0A0;
 }
 
+#input_fields{
+    border: 2px solid #333833;
+    border-radius: 20px;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f78c2e), color-stop(1, #fa7108));
+	background:-moz-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:-webkit-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:-o-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:-ms-linear-gradient(top, #f78c2e 5%, #fa7108 100%);
+	background:linear-gradient(to bottom, #f78c2e 5%, #fa7108 100%);
+    text-align: center;
+    font-size: 17px;
+    
+   
+}
 #myLogo {
     margin-top: 10px;
 }
