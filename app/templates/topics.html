@@ -6,12 +6,13 @@
 {% endblock %}
 
 
-{% block content %}
+
+    {% block navigation %}
                 <!-- Header ELEMENT -->
-    <header>
+           
             <nav class="navbar navbar-default center" id = "navigation">
                 <div class="container-fluid ">
-
+                
                <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collaps-nav-bar" aria-expanded="false"> 
@@ -64,7 +65,7 @@
                            </li>
 
                            <li class = "dropdown">
-                               <a class="dropdown-toggle" data-toggle="dropdown" role="button">Users & Login<span class="caret"></span></a>
+                               <a class="dropdown-toggle" data-toggle="dropdown" role="button">Database <span class="caret"></span></a>
                                <ul class="dropdown-menu">
                                   {% for t in TOPIC_DICT["Users"] %}
                                       <li><a href="{{t[1]}}">{{t[0]}}</a></li>
@@ -72,9 +73,13 @@
                                </ul>
                            </li>                                                                            
                        </ul>    
-                    </div><!-- /.navbar-collapse -->     
+                    </div><!-- /.navbar-collapse -->    
+                     
                 </div>
             </nav> <!-- End of Navigation Bar -->
-    </header>
-    <p>header.html</p> 
+        
+    {% endblock %} 
+      
+{% block content %}
+    <p>topics.html</p>
 {% endblock %}

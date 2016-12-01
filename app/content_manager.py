@@ -1,20 +1,22 @@
+# Resource for advanced content management: https://www.youtube.com/watch?v=xdstIR3prSk&index=22&list=PLQVvvaa0QuDc_owjTbIY4rbgXOFkUYOUB
+
 def Content():
-    TOPIC_DICT = { "Application Settup": [["Installation", "/installing-components/"],
-                                          ["Architecture", "/app-architecture/"],
-                                          ["Coding", "/coding-backend/"],
-                                          ["Conclusion", "/app-set-conclusion/"]
+    TOPIC_DICT = { "Application Settup": [["Installation", "/topics/installing-components/"],
+                                          ["Architecture", "/topics/app-architecture/"],
+                                          ["Coding Basics", "/topics/coding-basics/"],
+                                          ["Conclusion", "/topics/app-setup-conclusion/"]
                                          ],
-                   "App Layout": [["Introduction to Bootstrap", "/about-bootstrap/"],
-                                  ["Conclusion", "/bootstrap-conclusion/"]
+                   "App Layout": [["Introduction to Bootstrap", "/topics/about-bootstrap/"],
+                                  ["Conclusion", "/topics/bootstrap-conclusion/"]
                                          ],
-                   "Jinja2 Templating": [["Overview", "/about-jinja/"],
-                                         ["Implementation", "/implement-jinja/"],
-                                         ["Conclusion", "/jinja2-conclusion/"]
+                   "Jinja2 Templating": [["Overview", "/topics/what-is-jinja2/"],
+                                         ["Implementation", "/topics/how-to-jinja/"],
+                                         ["Conclusion", "/topics/jinja2-conclusion/"]
                                         ],
-                   "Users": [["Database", "/sqlite-alchemy/"],
-                             ["Database Models", "/db-models/"],
-                             ["Flask Forms", "/flask-forms/"],
-                             ["Conclusion", "/concluson-on-that/"]
+                   "Users": [["SQLAlchemy Database", "/topics/sqlite-alchemy/"],
+                             ["Database Models", "/topics/db-models/"],
+                             ["Flask Forms", "/topics/flask-forms/"],
+                             ["Conclusion", "/topics/database-conclusion/"]
                             ]
                  }
     

@@ -54,11 +54,21 @@
             </div><!-- q/.container-fluid -->
         </nav>
     {% endblock %}
+    
+    <!-- Adding navigation element from header.html for rendering -->
+    {% block navigation %}
+    {% endblock %}
 </header>
 
                 <!-- BODY ELEMENT -->
 <body>    
-    {% block content %}{% endblock %}
+
+    
+        <div class="container main-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    
        <!-- Flash Messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
