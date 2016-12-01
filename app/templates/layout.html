@@ -3,6 +3,7 @@
                 <!-- HEAD ELEMENT -->
 
 <head>
+    {% block head %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -23,32 +24,51 @@
         <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
 
         <script src ="{{ url_for('static', filename = 'lib/js/bootstrap.min.js')}}"></script>
+    {% endblock %}
 </head>
 
                    <!-- Header ELEMENT -->
 <header>
+    {% block header %}
         <nav class="navbar header-LOGin navbar-full">
             <div class="container-fluid">
                <div class = "row">
                     <div class = "col-md-8 col-sm-8 col-xs-12">
                         <img src="{{ url_for('static', filename = 'images/logo.png')}}" alt = "LOGO" class = "img-responsive" id = "myLogo">
                     </div>
-                    <div class = "col-md-4 col-sm-4 col-xs-12">
-                       {% if not g.user.is_authenticated() %}
+                    <div class = "col-md-4 col-sm-4 col-xs-12" id = user_panel>
+                      <!-- Note: in older Flask-Login versions is_authenticated was a method with () at the end.
+                                  From version 0.3.0, its a property and () should be removed! 
+                                  https://github.com/lingthio/Flask-User-starter-app/issues/9  -->
+                                  
+                       {% if not g.user.is_authenticated %}
                             <a href="{{ url_for('register') }}" class = "loginBtn btn-block text-center">Register</a>
                             <a href="{{ '/login/' }}" class = "loginBtn btn-block text-center">Login</a>
                        {% endif %}
-                       {% if g.user.is_authenticated() %}
+                       {% if g.user.is_authenticated %}
                             <a href="{{ url_for('logout') }}" class = "loginBtn btn-block text-center">Logout</a>
+                            <p >user panel</p>
                        {% endif %}
                     </div>
                </div>
             </div><!-- q/.container-fluid -->
         </nav>
-
+    {% endblock %}
 </header>
 
                 <!-- BODY ELEMENT -->
-<body>
+<body>    
     {% block content %}{% endblock %}
+       <!-- Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+
+                <div class = "alert alert-warning alert-dismissible" style="width: 50%; margin: auto;" role = "alert">
+                   <button type = "button" class="close" data-dismiss = "alert" area-lable = "Close"><span area-hidden = "true" >&times;</span></button>
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 </body>

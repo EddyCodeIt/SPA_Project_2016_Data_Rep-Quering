@@ -78,6 +78,8 @@ To connect index.html file to server:
             {% logic %}
             {% endlogic %}
 
+# 6) SQLAlchemy error handling helps:
+http://stackoverflow.com/questions/24522290/cannot-catch-sqlalchemy-integrityerror
 
 
 

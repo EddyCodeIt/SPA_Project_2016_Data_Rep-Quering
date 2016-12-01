@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "layout.html" %}
 
 
 
@@ -6,21 +6,30 @@
 
     <body>
         <div class = "container">
-           <br>
-           <h3>Please login: </h3>
-           <br>
-           
-           <form action = "" class = "form-inline" method = "post">
-               <input type = "text" class = "form-control" 
-               placeholder="User Name" name = "username"
-               value = "{{request.form.username}}" required> <!-- way to pass data back to python -->
-               <input type = "password" class = "form-control" 
-               placeholder="Password" name = "password"
-               value = "{{request.form.password}}" required>
-               <input class = "btn btn-default" type = "submit" value = "Login">
-           </form>
-        
-           <p>{{ error }}</p>
+           <div class="row">
+               <div class="col-md-4"></div>
+               
+               <div class="col-md-4">
+                   <br>
+                   <h3 style="margin: 5px">Please login: </h3>
+                   <br>
+
+                   <form action = "" class = "form-inline" method = "post">
+                       <input type = "text" class = "form-control" 
+                       placeholder="User Name" name = "username"
+                       value = "{{request.form.username}}" required> <!-- way to pass data back to python -->
+                       <input type = "password" class = "form-control" 
+                       placeholder="Password" name = "password"
+                       value = "{{request.form.password}}" required>
+                       <input class = "btn btn-default" type = "submit" value = "Login">
+                   </form>
+                   {% if error %}
+                       <p class="error"><strong>Error:</strong>{{error}}</p>
+                   {% endif %}
+               </div>
+            
+               <div class="col-md-4"></div>
+           </div>            
         </div>
     </body>
     

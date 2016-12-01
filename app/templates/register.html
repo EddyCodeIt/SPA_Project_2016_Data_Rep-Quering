@@ -1,10 +1,7 @@
-{% extends "index.html" %}
-
+{% extends "layout.html" %}
 
 
 {% block content %} 
-
-    <body>
         <div class = "container-fluid" >
            <div class="row">
                <div class="col-md-4"></div>
@@ -22,14 +19,15 @@
                         {{ render_field(form.password) }}
                         {{ render_field(form.confirm) }}
                         </dl>
-                        <input class = "loginBtn" style = "border-radius: 20px; "type=submit value=Register>
+                        <p><input class = "loginBtn" style = "border-radius: 20px; "type=submit value=Register>
                     </form>
+                    {% if error %}
+                       <p class="error"><strong>Error:</strong>{{error}}</p>
+                    {% endif %}
                </div>
-               
+            
                <div class="col-md-4"></div>
            </div>
 
         </div>
-    </body>
-
 {% endblock %}
