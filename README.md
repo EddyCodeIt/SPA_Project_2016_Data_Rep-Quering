@@ -1,26 +1,27 @@
 # SPA_Project_2016_Data_Rep-Quering
 
-# 1) App Source Code Installation Instructions
+<div class="container-fluid" >
+    <title>Installation Guide</title>
+     <h1 class="text-center" style="color: #72237D">List of libraries to Install</h1><br><br>
 
-- Follow this steps to install server on local machine
+     <p> First of all, you need to install a python on your local machine: <a href = "https://www.python.org/ftp/python/3.5.2/python-3.5.2.exe">Python v3.5.2</a></p>
+     <br>
+     <p> You need pip installation tool to install Python libraries. <a href = "https://pip.pypa.io/en/stable/installing/">Pip</a></p>
+     <br>
+     <p>Once that done, run command <mark>pip freeze</mark> in your command prompt. This will show what Python already has.</p>
+     <p>Use pip to install following: </p>
+     <ul>
+         <li>Flask==0.11.1</li>
+         <li>Flask-Login==0.4.0</li>
+         <li>Flask-SQLAlchemy==2.1</li>
+         <li>Flask-WTF==0.13.1</li>
+         <li>SQLAlchemy==1.1.4</li>
+         <li>sqlalchemy-migrate==0.10.0</li>
+         <li>WTForms==2.1</li>
+     </ul>
 
-    1) Install Python on your machine
-            https://www.python.org/downloads/
-            
-            For Windows: 
-            After installing python, call it in your terminal by typing "python" or "py".
-            You should enter python console.
-            If Windows does not recognize python, you have to specify path to a python.exe file in OS enviromental variables settings.
-            
-    2) Install Flask micro-framework 
-            http://flask.pocoo.org/docs/0.11/installation/
-            
-            For Windows: 
-            In some cases, you have to specify path to Script folder in your python directory in OS enviromental variables settings.
-            
-    3) Clone git repository or unzip folder with a source. CD to project folder in your console. 
-       Run command: py server.py
-       Copy the address provided by python and use it as URL in browser.
+</div>
+
 
 # 2) App Organisation
 
@@ -85,27 +86,6 @@ http://stackoverflow.com/questions/24522290/cannot-catch-sqlalchemy-integrityerr
 
 
 
-<div class="container-fluid" >
-    <title>Installation Guide</title>
-     <h1 class="text-center" style="color: #72237D">List of libraries to Install</h1><br><br>
-
-     <p> First of all, you need to install a python on your local machine: <a href = "https://www.python.org/ftp/python/3.5.2/python-3.5.2.exe">Python v3.5.2</a></p>
-     <br>
-     <p> You need pip installation tool to install Python libraries. <a href = "https://pip.pypa.io/en/stable/installing/">Pip</a></p>
-     <br>
-     <p>Once that done, run command <mark>pip freeze</mark> in your command prompt. This will show what Python already has.</p>
-     <p>Use pip to install following: </p>
-     <ul>
-         <li>Flask==0.11.1</li>
-         <li>Flask-Login==0.4.0</li>
-         <li>Flask-SQLAlchemy==2.1</li>
-         <li>Flask-WTF==0.13.1</li>
-         <li>SQLAlchemy==1.1.4</li>
-         <li>sqlalchemy-migrate==0.10.0</li>
-         <li>WTForms==2.1</li>
-     </ul>
-
-</div>
 
 
 
