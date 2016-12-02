@@ -7,7 +7,36 @@
 
 
 {% block content %}
+    <div class="container-fluid" >
+            <title>SPA - What it's all about?!</title>
+            <h1 class="text-center">SPA - <small style="color: #72237D">What it's all about?!</small></h1><br> 
+            
+            <p class = "lead" class="text-center"> I built this website to share my experience in developing on Python Microframework <b>Flask</b>.</p>
+            <p>The goal of developing this application is to learn what utilities Flask can provided to enhance smooth
+               programming flow, how convinient to use it and what Flask is good at, and why people using it. </p><br>
+            
+            <p class = "lead" class="text-center">What is Flask? </p>
+            <p>From my experience of using Flask, I understood that it is a backbone of the web application that provide means for <br> user - server communication, i.e., handling requests from users and sending back responses, passing data & informatione, as well as, laying out routes on your website, and many more...</p>
+            <p class = "lead" class="text-center">What Flask offers and what I used: </p>
+            <ul>
+                <li>Official: <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 Templates</a> Flask: <a href="http://flask.pocoo.org/docs/0.11/templating/">Jinja2 Setup</a>
+                </li>
+                <li><a href="http://flask.pocoo.org/docs/0.11/quickstart/#routing">Routing of a website</a></li>
+                <li><p>URL building methods</p></li>
+                <li><p>HTTP Methods</p></li> 
+                <li><a href="http://flask-sqlalchemy.pocoo.org/2.1/">SQLAlchemy DB toolkit</a></li>
+                <li><a href="https://flask-login.readthedocs.io/en/latest/">Flask Login</a></li>
+                <br>
+                <p>From outside Flask's scope I used: </p>
+                <li><a href="http://wtforms.readthedocs.io/en/latest/">WTForms </a></li>
+                <li><a href="http://getbootstrap.com/">Bootstrap Library </a></li>
+            </ul>
+            <br><br>
+            <p class = "lead" class="text-center">Lets go ahead and install necessary components to run an app:  </p>
+            <!-- Redirect to topics page -->
+            <a  href="{{ url_for('installation') }}" class = "loginBtn btn-block">Start Learning</a>
 
-        Home, sweet home.
+    </div>
+        
   
 {% endblock %}

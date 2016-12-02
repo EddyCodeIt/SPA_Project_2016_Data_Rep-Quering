@@ -19,7 +19,8 @@
                         {{ render_field(form.password) }}
                         {{ render_field(form.confirm) }}
                         </dl>
-                        <p><input class = "loginBtn" style = "border-radius: 20px; "type=submit value=Register>
+                        <p><input class = "loginBtn" style = "border-radius: 20px; width: 150px;"type=submit value=Register>
+                        <p><a href="{{ url_for('index') }}" class = "loginBtn btn-block text-center" style = "border-radius: 20px; width: 150px;">Cancel</a>
                     </form>
                     {% if error %}
                        <p class="error"><strong>Error:</strong>{{error}}</p>

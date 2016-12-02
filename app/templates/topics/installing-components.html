@@ -8,6 +8,26 @@
 
 {% block content %} 
    
-    <p> Installation! </p> 
+    <div class="container-fluid" >
+        <title>Installation Guide</title>
+         <h1 class="text-center" style="color: #72237D">List of libraries to Install</h1><br><br>
+         
+         <p> First of all, you need to install a python on your local machine: <a href = "https://www.python.org/ftp/python/3.5.2/python-3.5.2.exe">Python v3.5.2</a></p>
+         <br>
+         <p> You need pip installation tool to install Python libraries. <a href = "https://pip.pypa.io/en/stable/installing/">Pip</a></p>
+         <br>
+         <p>Once that done, run command <mark>pip freeze</mark> in your command prompt. This will show what Python already has.</p>
+         <p>Use pip to install following: </p>
+         <ul>
+             <li>Flask==0.11.1</li>
+             <li>Flask-Login==0.4.0</li>
+             <li>Flask-SQLAlchemy==2.1</li>
+             <li>Flask-WTF==0.13.1</li>
+             <li>SQLAlchemy==1.1.4</li>
+             <li>sqlalchemy-migrate==0.10.0</li>
+             <li>WTForms==2.1</li>
+         </ul>
+         
+    </div>
     
 {% endblock %}

@@ -1,6 +1,13 @@
+<!-- THIS IS A BASE TEMPLATE FOR ALL OTHER TEMPLATES 
+     Includes: 1 <head></head> with library links, style links, favicon
+               2 <header></header> with LOGO and user buttons with some python logic to determine what to render.
+               3 <body></body> with content and jinja2 logic for flash messaging to notify user if some event occured  
+        -->
+
+
 <!DOCTYPE html>
 <html lang="en">
-                <!-- HEAD ELEMENT -->
+                <!-- HEAD ELEMENT - note, I am using jinja2 {{ url_for('static', filename = '/lvl1/lvl2/lvl3/file.type') }} variable tag when assigning href path to a link. Let the server handle routing to a files. -->
 
 <head>
     {% block head %}
@@ -27,7 +34,8 @@
     {% endblock %}
 </head>
 
-                   <!-- Header ELEMENT -->
+                   <!-- Header ELEMENT - content of header is wrapped in jinja2 blocks to mark what need to be rendered 
+                                         to an inheritting element. -->
 <header>
     {% block header %}
         <nav class="navbar header-LOGin navbar-full">
@@ -37,17 +45,27 @@
                         <img src="{{ url_for('static', filename = 'images/logo.png')}}" alt = "LOGO" class = "img-responsive" id = "myLogo">
                     </div>
                     <div class = "col-md-4 col-sm-4 col-xs-12" id = user_panel>
+                     
+                     <!-- Jinja2 logic down below checks if current requests from a client has authenticated user -->
                       <!-- Note: in older Flask-Login versions is_authenticated was a method with () at the end.
                                   From version 0.3.0, its a property and () should be removed! 
                                   https://github.com/lingthio/Flask-User-starter-app/issues/9  -->
-                                  
+                       
                        {% if not g.user.is_authenticated %}
                             <a href="{{ url_for('register') }}" class = "loginBtn btn-block text-center">Register</a>
-                            <a href="{{ '/login/' }}" class = "loginBtn btn-block text-center">Login</a>
+                            <a href="{{ '/login/' }}" class = "loginBtn btn-block text-center">Login</a>  
                        {% endif %}
                        {% if g.user.is_authenticated %}
-                            <a href="{{ url_for('logout') }}" class = "loginBtn btn-block text-center">Logout</a>
-                            <p >user panel</p>
+
+                       <div class="row">
+                           <div class="col-md-7">
+                              <a href = "{{ url_for('user_profile', username=g.user.username)}}"type="button" class="btn btn-primary">User Profile</a>
+                                
+                           </div>
+                           <div class="col-md-5">
+                               <a href="{{ url_for('logout') }}" class = "loginBtn btn-block text-center">Logout</a>
+                           </div>
+                       </div>                           
                        {% endif %}
                     </div>
                </div>
@@ -66,14 +84,17 @@
     
         <div class="container main-content">
             {% block content %}
+                
             {% endblock %}
         </div>
     
-       <!-- Flash Messages -->
+       <!-- Flash Messages - 1. Assign what is returned from get_flashed_messages(), typically list of messages, to a local messages                                variable
+                             2. Check if there is any messages returned 
+                             3. Loop messages and spit them out in a variable {{message}}-->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-
+                <!-- Wrapping message in div, adding bootstrap classes to it to make pretty -->
                 <div class = "alert alert-warning alert-dismissible" style="width: 50%; margin: auto;" role = "alert">
                    <button type = "button" class="close" data-dismiss = "alert" area-lable = "Close"><span area-hidden = "true" >&times;</span></button>
                     {{message}}

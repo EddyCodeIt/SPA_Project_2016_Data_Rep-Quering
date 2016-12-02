@@ -32,9 +32,21 @@ TOPIC_DICT = Content()
 def index(): 
     return render_template("index.html")
 
+
+    
+# User profile
+@app.route("/user-profile/<username>")
+@login_required
+def user_profile(username):
+    user = User.query.filter_by(username=username).first()
+    if user == None:
+        flash("User %s not found." % username)
+        return redirect(url_for("index"))
+    return render_template("user-profile.html", user=user)
+
 @app.route('/topics/')
 @login_required
-def topics():       
+def topics():
     return render_template("topics.html", TOPIC_DICT = TOPIC_DICT)
     # 1st TOPIC_DICT is used in html 
     # 2nd TOPIC_DICT is corresponding to one declared on top
@@ -103,6 +115,9 @@ def flask_form():
 @login_required
 def database_conclusion():
     return render_template("/topics/database-conclusion.html", TOPIC_DICT = TOPIC_DICT)
+
+
+
 
 # Code source: https://blog.openshift.com/use-flask-login-to-add-user-authentication-to-your-python-application/
 @app.route('/login/',methods=['GET','POST'])
