@@ -1,6 +1,12 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
     
     background-color: #A0A0A0;
+    margin: 0 0 100px; /* bottom = footer height */
+
 }
 
 p {
@@ -10,6 +16,28 @@ a {
     font-size: 17px;
     color: #ff752b;
 }
+
+.pageContentWrapper{
+  margin-bottom:100px;/* Height of footer*/
+} 
+.footer {
+    height: 100px;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #202020;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow:hidden;
+}
+#credits {
+    padding-top: 30px;
+    padding-left: 70px;
+    color: azure;
+    font-size: 14px;
+}
+
 .form-control{
     margin: 5px;
 }
@@ -38,7 +66,6 @@ a {
     border-right: 3px solid #333833;
     border-radius: 20px;
     padding: 10px;
-    height: auto;
 }
 
 /* USER PANEL */

@@ -134,13 +134,13 @@ def login():
         return redirect(url_for('login'))
     login_user(registered_user)
     flash('Logged in successfully')
-    return redirect(url_for('topics'))
+    return redirect(url_for('index'))
     
 # need to handle(if debug mode set to true): sqlalchemy.exc.IntegrityError
-#                 IntegrityError: (IntegrityError) column nickname is not unique u'UPDATE user SET nickname=?, about_me=? WHE
+#                 IntegrityError: (IntegrityError) column username is not unique u'UPDATE user SET nickname=?, about_me=? WHE
 #               (if debug mode false): HTTP error code 500
 # Solution: try: ... except exc.IntegrityError as e: ... . Sqlalchemy exc library handles exceptions for us. 
-# Important! rollback() current db session if IntegrityError triggers excepted. 
+# Important! rollback() current db session if IntegrityError trigger excepted. 
 @app.route('/register/', methods = ['GET', 'POST'])
 def register():
     if g.user is not None and g.user.is_authenticated:
@@ -154,6 +154,7 @@ def register():
             db.session.commit()
             flash('Thanks for registering')
             return redirect(url_for('login'))
+# http://stackoverflow.com/questions/24522290/cannot-catch-sqlalchemy-integrityerror 
         except exc.IntegrityError as e:
             flash("That user name is already taken... Try something else!")
             db.session().rollback()

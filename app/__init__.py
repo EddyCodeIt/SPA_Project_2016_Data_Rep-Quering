@@ -12,27 +12,30 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__) 
 # setting up app
 
-# use of config file created
+# use of config file
 app.config.from_object('config')
 
 # Source: http://stackoverflow.com/questions/33738467/how-do-i-know-if-i-can-disable-sqlalchemy-track-modifications
 # To suppress overhead warning. By default True, but need to specify: 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_MIGRATE_REPO'] = True
-
-# creating object to store database
+# Storing instance of the database in global variable db. Now we can use SQLAlchemy commands to build database and interact with it.
 db = SQLAlchemy(app)
+# importing object that stores path to directory with database migrate files. Note: need to check if its ever used... 
+from config import basedir
+# for OS paths manipulations
 import os 
-## LOGIN ##
+## LOGIN - manager and password-hashing security ##
 from flask_login import LoginManager
 from werkzeug.security import generate_password_hash, check_password_hash
-from config import basedir
 
+# Making instance of Manager and initializing it in app.  
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'login'
+login_manager.login_view = 'login'   
+# ^                            
+# |__ binding 'login' view to manager
 
-
-#importing views
+#importing views and models
 from app import views, models
 

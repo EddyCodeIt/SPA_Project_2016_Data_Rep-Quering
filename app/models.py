@@ -1,3 +1,4 @@
+# http://docs.sqlalchemy.org/en/latest/orm/tutorial.html
 # importing db object
 from app import db
 from flask_login import UserMixin
@@ -11,7 +12,7 @@ class User(db.Model, UserMixin):
     username = db.Column('username', db.String(15), index=True, unique=True)
     password = db.Column('password', db.String(15))
     
-
+#setting ()
     def __init__(self, username, password):
         self.username = username
         self.password = password
